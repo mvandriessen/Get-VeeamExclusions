@@ -16,8 +16,6 @@ foreach($Job in $JobList)
         Name = $job.Name
         ExcludedVMs = "$VMExclusions"
     }
-
-    #$ExclusionList += $job.GetObjectsInJob() | Where-Object {$_.Type -eq "Exclude"}
 }
 
 $ExclusionList | Export-Csv ExcludedVMs.csv -delimiter ";" -NoTypeInformation
